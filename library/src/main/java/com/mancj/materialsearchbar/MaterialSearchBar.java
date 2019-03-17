@@ -110,13 +110,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
     private boolean borderlessRippleEnabled = false;
 
     private int textCursorColor;
-    private int leftTextSelectorRes;
-    private int middleTextSelectorRes;
-    private int rightTextSelectorRes;
-    private int leftTextSelectorTint;
-    private int middleTextSelectorTint;
-    private int rightTextSelectorTint;
-    private boolean textSelectorTintEnabled;
     private int highlightedTextColor;
     public int suggestionTextColor;
     public boolean updateSuggestionsDisabled;
@@ -181,13 +174,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
         hintColor = array.getColor(R.styleable.MaterialSearchBar_mt_hintColor, ContextCompat.getColor(getContext(), R.color.searchBarHintColor));
         placeholderColor = array.getColor(R.styleable.MaterialSearchBar_mt_placeholderColor, ContextCompat.getColor(getContext(), R.color.searchBarPlaceholderColor));
         textCursorColor = array.getColor(R.styleable.MaterialSearchBar_mt_textCursorTint, ContextCompat.getColor(getContext(), R.color.searchBarCursorColor));
-        leftTextSelectorTint = array.getColor(R.styleable.MaterialSearchBar_mt_leftTextSelectorTint, ContextCompat.getColor(getContext(), R.color.leftTextSelectorColor));
-        middleTextSelectorTint = array.getColor(R.styleable.MaterialSearchBar_mt_middleTextSelectorTint, ContextCompat.getColor(getContext(), R.color.middleTextSelectorColor));
-        rightTextSelectorTint = array.getColor(R.styleable.MaterialSearchBar_mt_rightTextSelectorTint, ContextCompat.getColor(getContext(), R.color.rightTextSelectorColor));
-        leftTextSelectorRes = array.getResourceId(R.styleable.MaterialSearchBar_mt_leftTextSelectorDrawable, R.drawable.text_select_handle_left_mtrl_alpha_mtrlsearch);
-        middleTextSelectorRes = array.getResourceId(R.styleable.MaterialSearchBar_mt_middleTextSelectorDrawable, R.drawable.text_select_handle_middle_mtrl_alpha_mtrlsearch);
-        rightTextSelectorRes = array.getResourceId(R.styleable.MaterialSearchBar_mt_rightTextSelectorDrawable, R.drawable.text_select_handle_right_mtrl_alpha_mtrlsearch);
-        textSelectorTintEnabled = array.getBoolean(R.styleable.MaterialSearchBar_mt_handlesTintEnabled, true);
         highlightedTextColor = array.getColor(R.styleable.MaterialSearchBar_mt_highlightedTextColor, ContextCompat.getColor(getContext(), R.color.searchBarTextHighlightColor));
         suggestionTextColor = array.getColor(R.styleable.MaterialSearchBar_mt_suggestionTextColor, ContextCompat.getColor(getContext(), R.color.searchBarSuggestionTextColor));
 
@@ -319,12 +305,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
      * Setup editText coloring and drawables
      */
     private void setupSearchEditText() {
-        try {
-            EditTextStyleHelper.applyChanges(this.searchEdit, this.textCursorColor, this.leftTextSelectorTint, this.rightTextSelectorTint, this.middleTextSelectorTint,
-                    this.leftTextSelectorRes, this.rightTextSelectorRes, this.middleTextSelectorRes, this.textSelectorTintEnabled);
-        } catch (EditTextStyleHelper.EditTextStyleChangeError e) {
-            Log.e(TAG, "init: ", e);
-        }
         searchEdit.setHighlightColor(highlightedTextColor);
 
         if (hintText != null)

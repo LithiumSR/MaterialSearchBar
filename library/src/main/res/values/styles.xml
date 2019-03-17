@@ -25,9 +25,6 @@
         <item name="mt_leftTextSelectorTint">@color/leftTextSelectorColor</item>
         <item name="mt_middleTextSelectorTint">@color/middleTextSelectorColor</item>
         <item name="mt_rightTextSelectorTint">@color/rightTextSelectorColor</item>
-        <item name="mt_leftTextSelectorDrawable">@drawable/text_select_handle_left_mtrl_alpha_mtrlsearch</item>
-        <item name="mt_middleTextSelectorDrawable">@drawable/text_select_handle_middle_mtrl_alpha_mtrlsearch</item>
-        <item name="mt_rightTextSelectorDrawable">@drawable/text_select_handle_right_mtrl_alpha_mtrlsearch</item>
         <item name="mt_handlesTintEnabled">true</item>
         <item name="mt_suggestionTextColor">@color/searchBarSuggestionTextColor</item>
         <item name="mt_suggestionIconTint">@color/searchBarSuggestionIconTintColor</item>
@@ -35,6 +32,7 @@
 
     <!-- MaterialSearchBarDarkTheme-->
     <style name="MaterialSearchBarDark" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorAccent">@color/material_grey_600</item>
         <item name="mt_searchBarColor">@color/searchBarPrimaryColorDark</item>
         <item name="mt_dividerColor">@color/searchBarDividerColorDark</item>
         <item name="mt_navIconTint">@color/searchBarNavIconTintColorDark</item>
