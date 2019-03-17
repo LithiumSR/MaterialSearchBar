@@ -76,20 +76,6 @@ public class EditTextStyleHelper {
             Field field = TextView.class.getDeclaredField("mEditor");
             field.setAccessible(true);
             Object editor = field.get(editText);
-
-            if (cursorColor != null) {
-                // Get the cursor drawable, tint it, and set it on the TextView Editor
-                field = TextView.class.getDeclaredField("mCursorDrawableRes");
-                field.setAccessible(true);
-                int cursorDrawableRes = field.getInt(editText);
-                Drawable cursorDrawable = ContextCompat.getDrawable(editText.getContext(),cursorDrawableRes).mutate();
-                cursorDrawable.setColorFilter(cursorColor, PorterDuff.Mode.SRC_IN);
-                Drawable[] drawables = {cursorDrawable, cursorDrawable};
-                field = editor.getClass().getDeclaredField("mCursorDrawable");
-                field.setAccessible(true);
-                field.set(editor, drawables);
-            }
-
             String[] resFieldNames = {"mTextSelectHandleLeftRes", "mTextSelectHandleRightRes", "mTextSelectHandleRes"};
             String[] drawableFieldNames = {"mSelectHandleLeft", "mSelectHandleRight", "mSelectHandleCenter"};
             Integer[] colors = {selectHandleLeftColor, selectHandleRightColor, selectHandleMiddleColor};

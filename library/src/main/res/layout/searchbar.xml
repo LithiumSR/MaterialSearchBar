@@ -92,7 +92,7 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textCursorDrawable="@null"
                     android:visibility="visible"/>
 
                 <ImageView
