@@ -86,14 +86,6 @@ then add SearchBar to your activity:
 | mt_textColor           | set text color                                                                        |
 | mt_hintColor           | set hint color                                                                        | 
 | mt_placeholderColor    | set placeholder color                                                                 |
-| mt_textCursorTint      | set text cursors tint                                                                 |
-| mt_leftTextSelectorDrawable | set left text selector drawable                                                  |
-| mt_middleTextSelectorDrawable | set middle text selector drawable                                              |
-| mt_rightTextSelectorDrawable | set right text selector drawable                                                |
-| mt_leftTextSelectorTint | set left text selector tint color                                                    |
-| mt_middleTextSelectorTint | set middle text selector tint color                                                |
-| mt_rightTextSelectorTint | set right text selector tint color                                                  |
-| mt_handlesTintEnabled  | should text selectors use tint color                                                  |
 | mt_highlightedTextColor | set the text highlight tint color                                                    |
 
 ----------
@@ -166,13 +158,6 @@ Example:
         <item name="mt_hintColor">@color/searchBarHintColor</item>
         <item name="mt_placeholderColor">@color/searchBarPlaceholderColor</item>
         <item name="mt_highlightedTextColor">@color/searchBarTextHighlightColor</item>
-        <item name="mt_leftTextSelectorTint">@color/leftTextSelectorColor</item>
-        <item name="mt_middleTextSelectorTint">@color/middleTextSelectorColor</item>
-        <item name="mt_rightTextSelectorTint">@color/rightTextSelectorColor</item>
-        <item name="mt_leftTextSelectorDrawable">@drawable/text_select_handle_left_mtrl_alpha_mtrlsearch</item>
-        <item name="mt_middleTextSelectorDrawable">@drawable/text_select_handle_middle_mtrl_alpha_mtrlsearch</item>
-        <item name="mt_rightTextSelectorDrawable">@drawable/text_select_handle_right_mtrl_alpha_mtrlsearch</item>
-        <item name="mt_handlesTintEnabled">true</item>
     </style>
 ```
 **OR**

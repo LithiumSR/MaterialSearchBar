@@ -109,7 +109,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
     public boolean suggestionIconTintEnabled;
     private boolean borderlessRippleEnabled = false;
 
-    private int textCursorColor;
     private int highlightedTextColor;
     public int suggestionTextColor;
     public boolean updateSuggestionsDisabled;
@@ -173,7 +172,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
         textColor = array.getColor(R.styleable.MaterialSearchBar_mt_textColor, ContextCompat.getColor(getContext(), R.color.searchBarTextColor));
         hintColor = array.getColor(R.styleable.MaterialSearchBar_mt_hintColor, ContextCompat.getColor(getContext(), R.color.searchBarHintColor));
         placeholderColor = array.getColor(R.styleable.MaterialSearchBar_mt_placeholderColor, ContextCompat.getColor(getContext(), R.color.searchBarPlaceholderColor));
-        textCursorColor = array.getColor(R.styleable.MaterialSearchBar_mt_textCursorTint, ContextCompat.getColor(getContext(), R.color.searchBarCursorColor));
         highlightedTextColor = array.getColor(R.styleable.MaterialSearchBar_mt_highlightedTextColor, ContextCompat.getColor(getContext(), R.color.searchBarTextHighlightColor));
         suggestionTextColor = array.getColor(R.styleable.MaterialSearchBar_mt_suggestionTextColor, ContextCompat.getColor(getContext(), R.color.searchBarSuggestionTextColor));
 
