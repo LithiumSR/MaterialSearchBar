@@ -898,6 +898,7 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
      */
     public void setText(String text) {
         searchEdit.setText(text);
+        searchEdit.setSelection(searchEdit.getText().length());
     }
 
     /**
@@ -1035,6 +1036,7 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
     public void OnItemClickListener(int position, View v) {
         if (v.getTag() instanceof String) {
             searchEdit.setText((String) v.getTag());
+            searchEdit.setSelection(searchEdit.getText().length());
         }
     }
 
