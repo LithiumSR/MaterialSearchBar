@@ -1029,35 +1029,6 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
         }
     }
 
-    @Override
-    protected Parcelable onSaveInstanceState() {
-        SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.isSearchBarVisible = searchEnabled ? VIEW_VISIBLE : VIEW_INVISIBLE;
-        savedState.suggestionsVisible = suggestionsVisible ? VIEW_VISIBLE : VIEW_INVISIBLE;
-        savedState.speechMode = speechMode ? VIEW_VISIBLE : VIEW_INVISIBLE;
-        savedState.navIconResId = navIconResId;
-        savedState.searchIconRes = searchIconRes;
-        savedState.suggestions = getLastSuggestions();
-        savedState.maxSuggestions = maxSuggestionCount;
-        if (hintText != null) savedState.hint = hintText.toString();
-        return savedState;
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Parcelable state) {
-        SavedState savedState = (SavedState) state;
-        super.onRestoreInstanceState(savedState.getSuperState());
-        searchEnabled = savedState.isSearchBarVisible == VIEW_VISIBLE;
-        suggestionsVisible = savedState.suggestionsVisible == VIEW_VISIBLE;
-        setLastSuggestions(savedState.suggestions);
-        if (suggestionsVisible)
-            animateSuggestions(0, getListHeight(false));
-        if (searchEnabled) {
-            inputContainer.setVisibility(VISIBLE);
-            placeHolder.setVisibility(GONE);
-            searchIcon.setVisibility(GONE);
-        }
-    }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
@@ -1093,58 +1064,5 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
          * @param buttonCode {@link #BUTTON_NAVIGATION}, {@link #BUTTON_SPEECH} or {@link #BUTTON_BACK} will be passed
          */
         void onButtonClicked(int buttonCode);
-    }
-
-    private static class SavedState extends BaseSavedState {
-        public static final Creator<SavedState> CREATOR = new Creator<SavedState>() {
-            @Override
-            public SavedState createFromParcel(Parcel source) {
-                return new SavedState(source);
-            }
-
-            @Override
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
-        private int isSearchBarVisible;
-        private int suggestionsVisible;
-        private int speechMode;
-        private int searchIconRes;
-        private int navIconResId;
-        private String hint;
-        private List suggestions;
-        private int maxSuggestions;
-
-        public SavedState(Parcel source) {
-            super(source);
-            isSearchBarVisible = source.readInt();
-            suggestionsVisible = source.readInt();
-            speechMode = source.readInt();
-
-            navIconResId = source.readInt();
-            searchIconRes = source.readInt();
-            hint = source.readString();
-            suggestions = source.readArrayList(null);
-            maxSuggestions = source.readInt();
-        }
-
-        public SavedState(Parcelable superState) {
-            super(superState);
-        }
-
-        @Override
-        public void writeToParcel(Parcel out, int flags) {
-            super.writeToParcel(out, flags);
-            out.writeInt(isSearchBarVisible);
-            out.writeInt(suggestionsVisible);
-            out.writeInt(speechMode);
-
-            out.writeInt(searchIconRes);
-            out.writeInt(navIconResId);
-            out.writeString(hint);
-            out.writeList(suggestions);
-            out.writeInt(maxSuggestions);
-        }
     }
 }
