@@ -54,6 +54,7 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
     public static final int BUTTON_BACK = 3;
     public static final int VIEW_VISIBLE = 1;
     public static final int VIEW_INVISIBLE = 0;
+    private boolean startupSuggestionList = true;
     private CardView searchBarCardView;
     private LinearLayout inputContainer;
     private ImageView navIcon;
@@ -445,6 +446,11 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
      * Shows search input and close arrow
      */
     public synchronized void enableSearch() {
+        enableSearch(true);
+    }
+
+    public synchronized void enableSearch(boolean startupSuggestionList) {
+        this.startupSuggestionList = startupSuggestionList;
         animateNavIcon();
         adapter.notifyDataSetChanged();
         searchEnabled = true;
@@ -949,8 +955,9 @@ public class MaterialSearchBar extends RelativeLayout implements View.OnClickLis
         } else {
             searchIcon.setVisibility(GONE);
             searchEdit.requestFocus();
-            if (!suggestionsVisible)
+            if (!suggestionsVisible && startupSuggestionList)
                 showSuggestionsList();
+            else if (!startupSuggestionList) startupSuggestionList = true;
         }
     }
 
