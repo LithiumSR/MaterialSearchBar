@@ -5,12 +5,12 @@ Material Design Search Bar for Android
 ----------
 This beautiful and easy to use library will help to add Lollipop Material Design SearchView in your project.
 
-<img src="/art/preview.gif" width="400">
-<img src="/art/pv1.png" width="400">
-<img src="/art/pv2.png" width="400">
-<img src="/art/pv3.png" width="400">
-<img src="/art/pv4.png" width="400">
-<img src="/art/pv5.png" width="400">
+<img src="art/preview.gif" width="400">
+<img src="art/pv1.png" width="400">
+<img src="art/pv2.png" width="400">
+<img src="art/pv3.png" width="400">
+<img src="art/pv4.png" width="400">
+<img src="art/pv5.png" width="400">
 
 ----------
 
@@ -271,4 +271,4 @@ public void onButtonClicked(int buttonCode) {
 ```
 
 
-More [Examples](https://github.com/mancj/MaterialSearchBar/tree/master/app/src/main/java/com/mancj/example)
+More [Examples](app/src/main/java/com/mancj/example)
